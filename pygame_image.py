@@ -1,66 +1,70 @@
-# import os
-# import sys
-# import pygame as pg
+import os
+import sys
+import pygame as pg
 
-# os.chdir(os.path.dirname(os.path.abspath(__file__)))
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 
-# def main():
-#     pg.display.set_caption("はばたけ！こうかとん")
-#     screen = pg.display.set_mode((800, 600))
-#     clock  = pg.time.Clock()
-#     bg_img = pg.image.load("fig/pg_bg.jpg")
-#     tmr = 0
-#     kk_move_x = 0  ##enshu2
-#     kk_move_y = 0  ##enshu2
-#     kk_img = pg.image.load("fig/3.png") #rennshu
-#     kk_img = pg.transform.flip(kk_img, True, False)
-#     kk_img = pg.transform.rotozoom(kk_img, 10, 1.0)
-#     bg_img_2 = pg.transform.flip(bg_img, True, False) #7
-#     kk_rct = kk_img.get_rect() #8_1
-#     kk_rct.center = 300 ,200 #8_2
+def main():
+    pg.display.set_caption("はばたけ！こうかとん")
+    screen = pg.display.set_mode((800, 600))
+    clock  = pg.time.Clock()
+    bg_img = pg.image.load("fig/pg_bg.jpg")
+    tmr = 0
+    kk_move_x = 0  ##enshu2
+    kk_move_y = 0  ##enshu2
+    kk_img = pg.image.load("fig/3.png") #rennshu
+    kk_img = pg.transform.flip(kk_img, True, False)
+    kk_img = pg.transform.rotozoom(kk_img, 10, 1.0)
+    bg_img_2 = pg.transform.flip(bg_img, True, False) #7
+    kk_rct = kk_img.get_rect() #8_1
+    kk_rct.center = 300 ,200 #8_2
     
 
 
-#     while True:
-#         x = tmr%3200
+    while True:
+        x = tmr%3200
         
-#         for event in pg.event.get():
-#             if event.type == pg.QUIT: return
+        for event in pg.event.get():
+            if event.type == pg.QUIT: return
 
 
-#         key_lst = pg.key.get_pressed()
-#         if key_lst[pg.K_UP]:
-#             kk_move_y = -1 
-#         if key_lst[pg.K_LEFT]:
-#             kk_move_x -= 1
-#         if key_lst[pg.K_RIGHT]:
-#             kk_move_x += 2
-#         if key_lst[pg.K_DOWN]:
-#             kk_move_y  = 1   
+        key_lst = pg.key.get_pressed()
+        if key_lst[pg.K_UP]:
+            kk_move_y = -1 
+        if key_lst[pg.K_LEFT]:
+            kk_move_x -= 1
+        if key_lst[pg.K_RIGHT]:
+            kk_move_x += 2
+        if key_lst[pg.K_DOWN]:
+            kk_move_y  = 1   
         
-#         kk_rct.move_ip((kk_move_x -1,kk_move_y)) #enshu
-#         kk_move_x = 0
-#         kk_move_y = 0
+        kk_rct.move_ip((kk_move_x -1,kk_move_y)) #enshu
+        kk_move_x = 0
+        kk_move_y = 0
 
 
-#         screen.blit(bg_img, [-x, 0]) ##6
-#         screen.blit(bg_img_2, [-x+1600, 0])
-#         screen.blit(bg_img, [-x+3200, 0])
-#         screen.blit(bg_img_2, [-x+4800,0])
+        screen.blit(bg_img, [-x, 0]) ##6
+        screen.blit(bg_img_2, [-x+1600, 0])
+        screen.blit(bg_img, [-x+3200, 0])
+        screen.blit(bg_img_2, [-x+4800,0])
 
-#         screen.blit(kk_img , kk_rct)
+        screen.blit(kk_img , kk_rct)
         
-#         pg.display.update()
-#         tmr += 1        
-#         clock.tick(777)
+        pg.display.update()
+        tmr += 1        
+        clock.tick(777)
 
         
 
 
 
-# if __name__ == "__main__":
-#     pg.init()
-#     main()
-#     pg.quit()
-#     sys.exit()
+if __name__ == "__main__":
+    pg.init() ##
+    main()# #
+    pg.quit() ###
+    sys.exit() ######
+
+
+print(x)
+
